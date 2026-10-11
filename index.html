@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>imaster — Dilmurod | AI Ijodkor</title>
+  <meta name="description" content="Dilmurod — AI ijodkor: 10+ veb sayt, 10+ Telegram bot, mebel zavodi uchun mobil ilova, AI video, reklama, foto restavratsiya va musiqa." />
+  <meta name="theme-color" content="#080811" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="imaster — Dilmurod | AI Ijodkor" />
+  <meta property="og:description" content="AI yordamida video, reklama, foto restavratsiya, veb saytlar va botlar." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    // intro flag + failsafe: never leave the page hidden if script.js fails to load
+    document.documentElement.classList.add('js');
+    setTimeout(function () { document.documentElement.classList.add('loaded', 'intro-done'); }, 7000);
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== PRELOADER / INTRO ===== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pl-inner">
+      <div class="pl-logo">
+        <span class="pl-char" style="--i:0">⚡</span><span class="pl-char" style="--i:1">i</span><span class="pl-char pl-accent" style="--i:2">m</span><span class="pl-char pl-accent" style="--i:3">a</span><span class="pl-char pl-accent" style="--i:4">s</span><span class="pl-char pl-accent" style="--i:5">t</span><span class="pl-char pl-accent" style="--i:6">e</span><span class="pl-char pl-accent" style="--i:7">r</span>
+      </div>
+      <p class="pl-sub">AI · Video · Web · Bot · Mobile</p>
+      <div class="pl-bar"><span id="plBar"></span></div>
+      <span class="pl-count" id="plCount">0</span>
+    </div>
+  </div>
+  <div class="curtain curtain-1" aria-hidden="true"></div>
+  <div class="curtain curtain-2" aria-hidden="true"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon">⚡</span>
+        <span>i<span class="logo-accent">master</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">Men haqimda</a></li>
+        <li><a href="#skills" class="nav-link">Ko'nikmalar</a></li>
+        <li><a href="#projects" class="nav-link">Loyihalar</a></li>
+        <li><a href="#gallery" class="nav-link">Galereya</a></li>
+        <li><a href="#contact" class="nav-link">Aloqa</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menyu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+      <canvas id="particleCanvas"></canvas>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge intro" style="--d:0">
+        <span class="badge-dot"></span>
+        Najot Ta'lim — Prompt Engineering
+      </div>
+      <h1 class="hero-title">
+        <span class="line"><span class="line-in" style="--d:1">Salom, men</span></span>
+        <span class="line"><span class="line-in hero-name" style="--d:2">Dilmurod</span></span>
+        <span class="line"><span class="line-in" style="--d:3"><span class="hero-typewriter" id="typewriter">AI Ijodkor</span></span></span>
+      </h1>
+      <p class="hero-desc intro" style="--d:4">
+        AI yordamida <strong>veb saytlar</strong>, <strong>Telegram botlar</strong>, <strong>mobil ilovalar</strong>,
+        video kliplar va reklama roliklari yarataman.
+        Ijod + Texnologiya = <span class="text-accent">imaster</span>
+      </p>
+      <div class="hero-cta intro" style="--d:5">
+        <a href="#projects" class="btn btn-primary">
+          <span>Loyihalarni ko'rish</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-outline">Bog'lanish</a>
+      </div>
+      <div class="hero-stats intro" style="--d:6">
+        <div class="stat-item">
+          <span class="stat-num" data-count="10">10</span><span class="stat-unit">+</span>
+          <span class="stat-label">Veb sayt</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="10">10</span><span class="stat-unit">+</span>
+          <span class="stat-label">Telegram bot</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="20">20</span><span class="stat-unit">+</span>
+          <span class="stat-label">Musiqa (Suno)</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image intro-pop">
+      <div class="avatar-wrapper">
+        <div class="avatar-ring ring1"></div>
+        <div class="avatar-ring ring2"></div>
+        <div class="avatar-ring ring3"></div>
+        <img src="assets/img/avatar.jpg" alt="Dilmurod" class="avatar-img" width="240" height="240" fetchpriority="high" />
+      </div>
+      <div class="floating-badge fb1"><span>🤖</span> 10+ Telegram bot</div>
+      <div class="floating-badge fb2"><span>📱</span> Mobil ilova</div>
+      <div class="floating-badge fb3"><span>🌐</span> 10+ Veb sayt</div>
+    </div>
+    <a href="#about" class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Pastga suring</span>
+    </a>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Men haqimda</span>
+        <h2 class="section-title">AI bilan ijod qilaman</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">
+            Men <strong>Dilmurod</strong> — Najot Ta'limda <strong>Prompt Engineering</strong>
+            yo'nalishini o'qib, AI texnologiyalaridan foydalanib turli ijodiy loyihalar yarataman.
+          </p>
+          <p>
+            Claude, Antigravity, Kimi, ElevenLabs, Gamma va boshqa AI vositalar yordamida
+            10 dan ortiq veb sayt, 10 dan ortiq Telegram bot va mebel zavodi uchun
+            zavodning butun tizimini boshqaradigan mobil ilova yaratdim.
+            Har bir loyiha — bu ijod va texnologiyaning uyg'unligi.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="hi-icon">🎓</div>
+              <div>
+                <strong>Najot Ta'lim</strong>
+                <span>Prompt Engineering kursi</span>
+              </div>
+            </div>
+            <button type="button" class="highlight-item highlight-btn" data-lightbox="assets/img/gallery/sertifikat-five-million-ai-leaders.jpg" data-caption="Five Million AI Leaders — Certificate of Completion">
+              <div class="hi-icon">🏅</div>
+              <div>
+                <strong>Five Million AI Leaders</strong>
+                <span>Sertifikat — ko'rish uchun bosing</span>
+              </div>
+            </button>
+            <div class="highlight-item">
+              <div class="hi-icon">🤖</div>
+              <div>
+                <strong>AI Vositalar</strong>
+                <span>Claude, Antigravity, Kimi, ElevenLabs, Hermes, Gamma</span>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="hi-icon">🌐</div>
+              <div>
+                <strong>Dasturlash</strong>
+                <span>10+ sayt · 10+ Telegram bot · mobil ilova</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="ai-tools-grid">
+            <div class="tool-card"><div class="tool-icon">🧠</div><span>Claude</span></div>
+            <div class="tool-card"><div class="tool-icon">🚀</div><span>Antigravity</span></div>
+            <div class="tool-card"><div class="tool-icon">🌙</div><span>Kimi</span></div>
+            <div class="tool-card"><div class="tool-icon">🎙️</div><span>ElevenLabs</span></div>
+            <div class="tool-card"><div class="tool-icon">🪽</div><span>Hermes</span></div>
+            <div class="tool-card"><div class="tool-icon">📊</div><span>Gamma</span></div>
+            <div class="tool-card"><div class="tool-icon">🎧</div><span>Adobe Podcast</span></div>
+            <div class="tool-card"><div class="tool-icon">🤖</div><span>ChatGPT</span></div>
+            <div class="tool-card"><div class="tool-icon">🎵</div><span>Suno AI</span></div>
+            <div class="tool-card"><div class="tool-icon">🎬</div><span>Runway</span></div>
+            <div class="tool-card"><div class="tool-icon">🎨</div><span>Midjourney</span></div>
+            <div class="tool-card"><div class="tool-icon">⚡</div><span>Prompt Eng.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Ko'nikmalar</span>
+        <h2 class="section-title">Nima qila olaman?</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">🎬</div>
+          <h3>Video Ijod</h3>
+          <p>Video kliplar, multfilmlar va reklama roliklari yaratish. AI yordamida professional sifatdagi kontent.</p>
+          <div class="skill-tags"><span>Runway ML</span><span>CapCut AI</span><span>Pika Labs</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🖼️</div>
+          <h3>Foto Restavratsiya va Dizayn</h3>
+          <p>Eski, yirtilgan fotosuratlarni tiklash va ranglash. Xona fotosidan AI interyer dizayn, infografikalar.</p>
+          <div class="skill-tags"><span>AI Photo</span><span>Restavratsiya</span><span>Interyer</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🎵</div>
+          <h3>Musiqa Yaratish</h3>
+          <p>Suno AI yordamida 20 dan ortiq original musiqa asarlari yaratilgan. Turli janrlar va uslublar.</p>
+          <div class="skill-tags"><span>Suno AI</span><span>Udio</span><span>AI Music</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">💻</div>
+          <h3>Veb Sayt Yaratish</h3>
+          <p>10 dan ortiq zamonaviy, funksional veb sayt va platformalar yaratganman.</p>
+          <div class="skill-tags"><span>Claude</span><span>Antigravity</span><span>Kimi</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">⚡</div>
+          <h3>Prompt Engineering</h3>
+          <p>AI modellaridan maksimal samara olish. Professional prompt yozish va optimallashtirish.</p>
+          <div class="skill-tags"><span>Claude</span><span>Kimi</span><span>Hermes</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🤖</div>
+          <h3>Telegram Bot</h3>
+          <p>10 dan ortiq Telegram bot: video yuklovchi, qarz daftari (Temir Daftar) va boshqa avtomatlashtirish tizimlari.</p>
+          <div class="skill-tags"><span>Python</span><span>Telegram API</span><span>AI Bot</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📱</div>
+          <h3>Mobil Ilova</h3>
+          <p>Mebel zavodi uchun zavodning butun tizimini boshqaradigan mobil ilova ishlab chiqqanman.</p>
+          <div class="skill-tags"><span>Mobile</span><span>Biznes tizim</span><span>AI Coding</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🎙️</div>
+          <h3>Ovoz va Podkast</h3>
+          <p>AI ovoz berish, diktor matnlari va podkast ovozini studiya sifatigacha tozalash.</p>
+          <div class="skill-tags"><span>ElevenLabs</span><span>Adobe Podcast</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📊</div>
+          <h3>Prezentatsiya</h3>
+          <p>AI yordamida tez va chiroyli prezentatsiyalar: kurs, biznes va ta'lim uchun.</p>
+          <div class="skill-tags"><span>Gamma</span><span>Canva AI</span><span>PowerPoint</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Mening Loyihalarim</h2>
+        <p class="section-desc">AI yordamida yaratilgan barcha ishlarim</p>
+      </div>
+
+      <div class="filter-tabs" role="tablist">
+        <button class="filter-btn active" data-filter="all">Hammasi</button>
+        <button class="filter-btn" data-filter="video">🎬 Video</button>
+        <button class="filter-btn" data-filter="web">💻 Veb</button>
+        <button class="filter-btn" data-filter="app">📱 Ilova va bot</button>
+        <button class="filter-btn" data-filter="music">🎵 Musiqa</button>
+        <button class="filter-btn" data-filter="other">⚡ Boshqalar</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Video Klip -->
+        <article class="project-card" data-category="video">
+          <button type="button" class="project-thumb video-thumb" data-video="assets/video/klip.mp4" data-caption="Video Klip — AI">
+            <img src="assets/video/klip.jpg" alt="Video klip kadri" loading="lazy" />
+            <span class="video-play-btn" aria-hidden="true">▶</span>
+            <span class="proj-tag thumb-tag">🎬 Video Klip</span>
+          </button>
+          <div class="project-info">
+            <h3>Video Klip</h3>
+            <p>AI yordamida yaratilgan to'liq video klip: personaj, sahnalar va vizual effektlar.</p>
+            <div class="project-tech"><span>Runway ML</span><span>AI Video</span><span>Suno</span></div>
+            <a href="https://t.me/imaster_ai" target="_blank" rel="noopener noreferrer" class="proj-url">📢 @imaster_ai kanalda ko'rish</a>
+          </div>
+        </article>
+
+        <!-- Multfilm -->
+        <article class="project-card" data-category="video">
+          <button type="button" class="project-thumb video-thumb" data-video="assets/video/multfilm.mp4" data-caption="Multfilm — Parijga sayohat">
+            <img src="assets/video/multfilm.jpg" alt="Multfilm kadri" loading="lazy" />
+            <span class="video-play-btn" aria-hidden="true">▶</span>
+            <span class="proj-tag thumb-tag">🎭 Animatsiya</span>
+          </button>
+          <div class="project-info">
+            <h3>Multfilm / Animatsiya</h3>
+            <p>Real suratdan multfilm qahramonlariga: oilaviy Parij sayohati haqida AI animatsiya.</p>
+            <div class="project-tech"><span>AI Animation</span><span>Pika Labs</span></div>
+            <a href="https://t.me/imaster_ai" target="_blank" rel="noopener noreferrer" class="proj-url">📢 @imaster_ai kanalda ko'rish</a>
+          </div>
+        </article>
+
+        <!-- Reklama foto -->
+        <article class="project-card" data-category="video">
+          <div class="project-thumb">
+            <div class="slider" data-interval="2500">
+              <img src="assets/img/reklama/reklama-01.jpg" alt="Reklama 1" class="slide-img active" />
+              <img src="assets/img/reklama/reklama-02.jpg" alt="Reklama 2" class="slide-img" loading="lazy" />
+              <img src="assets/img/reklama/reklama-03.jpg" alt="Reklama 3" class="slide-img" loading="lazy" />
+              <img src="assets/img/reklama/reklama-04.jpg" alt="Reklama 4" class="slide-img" loading="lazy" />
+              <img src="assets/img/reklama/reklama-05.jpg" alt="Reklama 5" class="slide-img" loading="lazy" />
+              <img src="assets/img/reklama/reklama-06.jpg" alt="Reklama 6" class="slide-img" loading="lazy" />
+              <img src="assets/img/reklama/reklama-07.jpg" alt="Reklama 7" class="slide-img" loading="lazy" />
+              <img src="assets/img/reklama/reklama-08.jpg" alt="Reklama 8" class="slide-img" loading="lazy" />
+              <img src="assets/img/reklama/reklama-09.jpg" alt="Reklama 9" class="slide-img" loading="lazy" />
+              <img src="assets/img/reklama/reklama-10.jpg" alt="Reklama 10" class="slide-img" loading="lazy" />
+            </div>
+            <span class="proj-tag thumb-tag">📢 Reklama foto</span>
+          </div>
+          <div class="project-info">
+            <h3>Reklama Fotolari</h3>
+            <p>Biznes va mahsulotlar uchun AI yordamida yaratilgan reklama fotolari.</p>
+            <div class="project-tech"><span>AI Photo</span><span>Copywriting</span></div>
+          </div>
+        </article>
+
+        <!-- Reklama video: NRG -->
+        <article class="project-card" data-category="video">
+          <button type="button" class="project-thumb video-thumb" data-video="assets/video/reklama-nrg.mp4" data-caption="NRG — ko'chmas mulk reklamasi">
+            <img src="assets/video/reklama-nrg.jpg" alt="NRG reklama kadri" loading="lazy" />
+            <span class="video-play-btn" aria-hidden="true">▶</span>
+            <span class="proj-tag thumb-tag">📢 Reklama video</span>
+          </button>
+          <div class="project-info">
+            <h3>NRG — Ko'chmas mulk reklamasi</h3>
+            <p>Qurilishdan tayyor binogacha: turar-joy majmuasi uchun AI reklama roligi.</p>
+            <div class="project-tech"><span>AI Video</span><span>Reklama</span></div>
+          </div>
+        </article>
+
+        <!-- Reklama video: Fashion -->
+        <article class="project-card" data-category="video">
+          <button type="button" class="project-thumb video-thumb" data-video="assets/video/reklama-fashion.mp4" data-caption="Kiyim brendi uchun reklama">
+            <img src="assets/video/reklama-fashion.jpg" alt="Moda reklama kadri" loading="lazy" />
+            <span class="video-play-btn" aria-hidden="true">▶</span>
+            <span class="proj-tag thumb-tag">👗 Moda</span>
+          </button>
+          <div class="project-info">
+            <h3>Moda / Kiyim reklamasi</h3>
+            <p>Ayollar kiyimi kolleksiyasi uchun AI model va sahnalar bilan reklama video.</p>
+            <div class="project-tech"><span>AI Video</span><span>AI Model</span></div>
+          </div>
+        </article>
+
+        <!-- Temir Daftar bot promo -->
+        <article class="project-card" data-category="video">
+          <button type="button" class="project-thumb video-thumb" data-video="assets/video/telegram-bot.mp4" data-caption="Temir Daftar — Telegram bot promo">
+            <img src="assets/video/telegram-bot.jpg" alt="Temir Daftar bot promo kadri" loading="lazy" />
+            <span class="video-play-btn" aria-hidden="true">▶</span>
+            <span class="proj-tag thumb-tag">✈️ Bot promo</span>
+          </button>
+          <div class="project-info">
+            <h3>Temir Daftar — bot promo video</h3>
+            <p>Qarz daftari Telegram boti uchun promo: summa kiritish, avtomatik xabar va eslatmalar.</p>
+            <div class="project-tech"><span>Motion</span><span>Telegram</span><span>Promo</span></div>
+          </div>
+        </article>
+
+        <!-- Mebel zavodi mobil ilova -->
+        <article class="project-card featured" data-category="app">
+          <div class="project-thumb">
+            <div class="thumb-placeholder thumb-app">
+              <div class="phone-mock" aria-hidden="true">
+                <span class="pm-notch"></span>
+                <span class="pm-row w80"></span>
+                <span class="pm-cards"><i></i><i></i><i></i><i></i></span>
+                <span class="pm-row w60"></span>
+                <span class="pm-row w70"></span>
+              </div>
+            </div>
+            <span class="proj-tag thumb-tag">📱 Mobil ilova</span>
+          </div>
+          <div class="project-info">
+            <h3>Mebel zavodi — boshqaruv ilovasi</h3>
+            <p>Mebel zavodi uchun zavodning butun tizimini bitta mobil ilovadan boshqarish imkonini beruvchi ilova.</p>
+            <div class="project-tech"><span>Mobil ilova</span><span>Biznes tizim</span><span>AI Coding</span></div>
+          </div>
+        </article>
+
+        <!-- Munosib Mebel -->
+        <article class="project-card" data-category="web">
+          <div class="project-thumb">
+            <div class="slider" data-interval="3000">
+              <img src="assets/img/mebel/mebel-1.jpg" alt="Munosib Mebel 1" class="slide-img active" loading="lazy" />
+              <img src="assets/img/mebel/mebel-2.jpg" alt="Munosib Mebel 2" class="slide-img" loading="lazy" />
+              <img src="assets/img/mebel/mebel-3.jpg" alt="Munosib Mebel 3" class="slide-img" loading="lazy" />
+              <img src="assets/img/mebel/mebel-4.jpg" alt="Munosib Mebel 4" class="slide-img" loading="lazy" />
+              <img src="assets/img/mebel/mebel-5.jpg" alt="Munosib Mebel 5" class="slide-img" loading="lazy" />
+              <img src="assets/img/mebel/mebel-6.jpg" alt="Munosib Mebel 6" class="slide-img" loading="lazy" />
+              <img src="assets/img/mebel/mebel-7.jpg" alt="Munosib Mebel 7" class="slide-img" loading="lazy" />
+            </div>
+            <span class="proj-tag thumb-tag">💻 Veb Sayt</span>
+          </div>
+          <div class="project-info">
+            <h3>Munosib Mebel</h3>
+            <p>Toshkentdagi 3 filialli mebel do'koni sayti: buyurtma asosida oshxona, yotoqxona va shkaflar katalogi, bepul o'lchash va o'rnatishga ariza.</p>
+            <div class="project-tech"><span>HTML/CSS</span><span>JavaScript</span><span>Vercel</span></div>
+            <a href="https://mmbel.vercel.app/index.html" target="_blank" rel="noopener noreferrer" class="proj-url">🌐 mmbel.vercel.app</a>
+          </div>
+        </article>
+
+        <!-- Bayanul Lisan -->
+        <article class="project-card featured" data-category="web">
+          <div class="project-thumb">
+            <div class="bayan-preview">
+              <div class="bayan-fallback" aria-hidden="true"><span>🌙</span>بيان اللسان<small>Platforma yuklanmoqda…</small></div>
+              <iframe src="https://bayanul-lisan.onrender.com/" class="site-preview-frame" title="Bayanul Lisan platformasi ko'rinishi" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+              <div class="frame-overlay"></div>
+            </div>
+            <span class="proj-tag thumb-tag">⭐ Asosiy</span>
+          </div>
+          <div class="project-info">
+            <h3>Bayanul Lisan Platformasi</h3>
+            <p>Arab tili o'quv platformasi: video darslar (boshlang'ich, sarf, nahv), interaktiv testlar, nutq mashqlari, talaba kabineti va admin panel.</p>
+            <div class="project-tech"><span>HTML/CSS/JS</span><span>Web Speech API</span><span>Node.js</span></div>
+            <a href="https://bayanul-lisan.onrender.com/" target="_blank" rel="noopener noreferrer" class="proj-url">🌐 bayanul-lisan.onrender.com</a>
+          </div>
+        </article>
+
+        <!-- Suno -->
+        <article class="project-card" data-category="music">
+          <div class="project-thumb">
+            <div class="music-thumb">
+              <div class="music-visualizer" id="musicViz">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="music-note">🎵</div>
+            </div>
+            <span class="proj-tag thumb-tag">🎵 Musiqa</span>
+          </div>
+          <div class="project-info">
+            <h3>20+ Musiqa (Suno AI)</h3>
+            <p>Suno AI yordamida yaratilgan 20 dan ortiq original musiqa. Turli janrlar: pop, rap, ambient va boshqalar.</p>
+            <div class="project-tech"><span>Suno AI</span><span>AI Music</span><span>20+ tracks</span></div>
+            <div class="audio-player">
+              <button type="button" class="audio-btn" id="audioPlayBtn">▶ Tinglash</button>
+              <div class="audio-progress" id="audioProgress" role="progressbar" aria-label="Ijro jarayoni">
+                <div class="audio-bar" id="audioBar"></div>
+              </div>
+              <audio id="sunoAudio" src="assets/audio/suno-music.mp3" preload="none"></audio>
+            </div>
+          </div>
+        </article>
+
+        <!-- Telegram Bot -->
+        <article class="project-card" data-category="app">
+          <div class="project-thumb">
+            <div class="thumb-placeholder thumb-bot">
+              <div class="play-icon">🤖</div>
+              <span>Telegram Bot</span>
+            </div>
+            <span class="proj-tag thumb-tag">🤖 Bot</span>
+          </div>
+          <div class="project-info">
+            <h3>10+ Telegram Bot</h3>
+            <p>Python yordamida yaratilgan 10 dan ortiq Telegram bot: video yuklovchi, Temir Daftar va boshqa avtomatlashtirish botlari.</p>
+            <div class="project-tech"><span>Python</span><span>Telegram API</span><span>yt-dlp</span></div>
+          </div>
+        </article>
+
+        <!-- Prezentatsiya -->
+        <article class="project-card" data-category="other">
+          <div class="project-thumb">
+            <div class="thumb-placeholder thumb-pres">
+              <div class="play-icon">📊</div>
+              <span>Prezentatsiya</span>
+            </div>
+            <span class="proj-tag thumb-tag">📊 Pres.</span>
+          </div>
+          <div class="project-info">
+            <h3>AI Prezentatsiyalar</h3>
+            <p>AI yordamida yaratilgan professional prezentatsiyalar. Kurs, biznes va ta'lim maqsadlari uchun.</p>
+            <div class="project-tech"><span>Gamma</span><span>Canva AI</span><span>PowerPoint</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Galereya</span>
+        <h2 class="section-title">Foto ishlarim</h2>
+        <p class="section-desc">Oldin / keyin — chiziqni suring</p>
+      </div>
+
+      <h3 class="gallery-subtitle">🖼️ Eski foto restavratsiyasi</h3>
+      <div class="compare-grid">
+        <figure class="compare" style="--pos:50%; aspect-ratio: 3 / 4">
+          <img src="assets/img/gallery/restavratsiya-1-keyin.jpg" alt="Restavratsiyadan keyin" loading="lazy" />
+          <img src="assets/img/gallery/restavratsiya-1-oldin.jpg" alt="Restavratsiyadan oldin" class="compare-before" loading="lazy" />
+          <span class="compare-label left">Oldin</span><span class="compare-label right">Keyin</span>
+          <span class="compare-handle" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="50" class="compare-range" aria-label="Oldin/keyin taqqoslash" />
+        </figure>
+        <figure class="compare" style="--pos:50%; aspect-ratio: 3 / 4">
+          <img src="assets/img/gallery/restavratsiya-2-keyin.jpg" alt="Restavratsiyadan keyin" loading="lazy" />
+          <img src="assets/img/gallery/restavratsiya-2-oldin.jpg" alt="Restavratsiyadan oldin" class="compare-before" loading="lazy" />
+          <span class="compare-label left">Oldin</span><span class="compare-label right">Keyin</span>
+          <span class="compare-handle" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="50" class="compare-range" aria-label="Oldin/keyin taqqoslash" />
+        </figure>
+      </div>
+
+      <h3 class="gallery-subtitle">🛋️ Xona fotosidan AI interyer dizayn</h3>
+      <div class="compare-grid wide">
+        <figure class="compare" style="--pos:50%; aspect-ratio: 2340 / 1080">
+          <img src="assets/img/gallery/interyer-2.jpg" alt="AI interyer dizayn" loading="lazy" />
+          <img src="assets/img/gallery/interyer-3-asl.jpg" alt="Asl xona" class="compare-before" loading="lazy" />
+          <span class="compare-label left">Asl xona</span><span class="compare-label right">AI dizayn</span>
+          <span class="compare-handle" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="50" class="compare-range" aria-label="Asl xona va AI dizaynni taqqoslash" />
+        </figure>
+        <figure class="compare" style="--pos:50%; aspect-ratio: 2340 / 1080">
+          <img src="assets/img/gallery/interyer-1.jpg" alt="AI interyer dizayn" loading="lazy" />
+          <img src="assets/img/gallery/interyer-4-asl.jpg" alt="Asl xona" class="compare-before" loading="lazy" />
+          <span class="compare-label left">Asl xona</span><span class="compare-label right">AI dizayn</span>
+          <span class="compare-handle" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="50" class="compare-range" aria-label="Asl xona va AI dizaynni taqqoslash" />
+        </figure>
+      </div>
+
+      <h3 class="gallery-subtitle">📐 Infografika va AI foto</h3>
+      <div class="photo-grid">
+        <button type="button" class="photo-item tall" data-lightbox="assets/img/gallery/infografika-bugatti.jpg" data-caption="Bugatti Divo: anatomiyasi — infografika">
+          <img src="assets/img/gallery/infografika-bugatti.jpg" alt="Bugatti Divo infografika" loading="lazy" />
+        </button>
+        <button type="button" class="photo-item" data-lightbox="assets/img/gallery/infografika-burger.jpg" data-caption="Mukammal burgerning tarkibi — infografika">
+          <img src="assets/img/gallery/infografika-burger.jpg" alt="Burger infografika" loading="lazy" />
+        </button>
+        <button type="button" class="photo-item" data-lightbox="assets/img/gallery/infografika-iphone.jpg" data-caption="iPhone 17 Pro plata — infografika">
+          <img src="assets/img/gallery/infografika-iphone.jpg" alt="iPhone plata infografika" loading="lazy" />
+        </button>
+        <button type="button" class="photo-item" data-lightbox="assets/img/gallery/1999-2026.jpg" data-caption="1999 — 2026: o'tmish bilan uchrashuv">
+          <img src="assets/img/gallery/1999-2026.jpg" alt="1999 va 2026 AI foto" loading="lazy" />
+        </button>
+        <button type="button" class="photo-item" data-lightbox="assets/img/gallery/sertifikat-five-million-ai-leaders.jpg" data-caption="Five Million AI Leaders — Certificate of Completion">
+          <img src="assets/img/gallery/sertifikat-five-million-ai-leaders.jpg" alt="Five Million AI Leaders sertifikati" loading="lazy" />
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== JOURNEY ===== -->
+  <section class="journey" id="journey">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Sayohat</span>
+        <h2 class="section-title">AI bilan sayohatim</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-date">2024</span>
+            <h3>Boshlanish</h3>
+            <p>Najot Ta'limda Prompt Engineering kursini boshladim. AI dunyosi bilan birinchi tanishish.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-date">2024</span>
+            <h3>Birinchi Loyihalar</h3>
+            <p>Suno AI bilan musiqa, Runway bilan video kliplar va reklama roliklari yaratdim.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-date">2025</span>
+            <h3>Veb Saytlar</h3>
+            <p>Munosib Mebel saytini yaratib Vercel'ga deploy qildim. Bayanul Lisan platformasini ishlab chiqdim.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-date">2026</span>
+            <h3>Sertifikat va yangi yo'nalishlar</h3>
+            <p>Five Million AI Leaders dasturini tamomladim. Foto restavratsiya, interyer dizayn va bot promo videolar.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-date">Hozir</span>
+            <h3>10+ sayt, 10+ bot va mobil ilova</h3>
+            <p>Claude, Antigravity va Kimi bilan 10 dan ortiq sayt va Telegram bot, mebel zavodi uchun boshqaruv ilovasini yaratdim.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Aloqa</span>
+        <h2 class="section-title">Bog'laning</h2>
+        <p class="section-desc">Hamkorlik yoki savollaringiz bo'lsa, murojaat qiling</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a class="contact-card" href="https://t.me/drdili" target="_blank" rel="noopener noreferrer">
+            <div class="cc-icon">✈️</div>
+            <div><strong>Telegram (shaxsiy)</strong><span>@drdili</span></div>
+          </a>
+          <a class="contact-card" href="https://t.me/imaster_ai" target="_blank" rel="noopener noreferrer">
+            <div class="cc-icon">📢</div>
+            <div><strong>Telegram Kanal</strong><span>@imaster_ai — barcha ishlarim</span></div>
+          </a>
+          <a class="contact-card" href="tel:+998977774311">
+            <div class="cc-icon">📞</div>
+            <div><strong>Telefon</strong><span>+998 97 777 43 11</span></div>
+          </a>
+          <a class="contact-card" href="mailto:drdili1987@gmail.com">
+            <div class="cc-icon">📧</div>
+            <div><strong>Email</strong><span>drdili1987@gmail.com</span></div>
+          </a>
+          <div class="contact-card">
+            <div class="cc-icon">📍</div>
+            <div><strong>Joylashuv</strong><span>O'zbekiston</span></div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="form-name">Ismingiz</label>
+            <input type="text" id="form-name" name="name" placeholder="Ismingizni kiriting" autocomplete="name" required maxlength="80" />
+          </div>
+          <div class="form-group">
+            <label for="form-email">Email</label>
+            <input type="email" id="form-email" name="email" placeholder="email@example.com" autocomplete="email" required maxlength="120" />
+          </div>
+          <div class="form-group">
+            <label for="form-message">Xabar</label>
+            <textarea id="form-message" name="message" rows="5" placeholder="Xabaringizni yozing..." required maxlength="2000"></textarea>
+          </div>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Email orqali yuborish</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8l12-6-6 12V8H2z" fill="currentColor"/></svg>
+          </button>
+          <p class="form-hint">Tugma pochta ilovangizni tayyor xat bilan ochadi. Tezroq javob uchun — <a href="https://t.me/drdili" target="_blank" rel="noopener noreferrer">Telegram</a>.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-icon">⚡</span>
+          <span>i<span class="logo-accent">master</span></span>
+        </div>
+        <p class="footer-text">© <span id="year">2026</span> <strong>Dilmurod</strong> — AI yordamida yaratilgan portfolio</p>
+        <p class="footer-sub">Najot Ta'lim | Prompt Engineering</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Ko'rish oynasi" hidden>
+    <button type="button" class="lb-close" id="lbClose" aria-label="Yopish">✕</button>
+    <div class="lb-body" id="lbBody"></div>
+    <p class="lb-caption" id="lbCaption"></p>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
